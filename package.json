@@ -4,7 +4,7 @@
   "description": "simple boilerplate for small projects",
   "main": "index.js",
   "scripts": {
-    "start": "npm run css-watch & npm run js-watch & npm run server",
+    "start": "npm run css-watch & npm run js-watch & npm run html-watch & npm run server",
     "postinstall": "mkdir dist && mkdir dist/css",
     "js": "rollup -c",
     "js-watch": "rollup -c -w",
@@ -12,7 +12,10 @@
     "css": "stylus src/stylus --out dist/css",
     "css-watch": "stylus src/stylus --out dist/css -w",
     "css-lint": "stylint src/stylus/**/*.styl",
-    "server": "browser-sync start --server --files \"dist/css/*.css, dist/js/*.js, index.html\" reload --port 8000"
+    "server": "browser-sync start --server dist/ --files \"dist/css/*.css, dist/js/*.js, dist/*.html\" reload --port 8000",
+    "html": "npm run clean && nunjucks **/*.html -p src/html -o dist -u",
+    "html-watch": "npm run clean && nunjucks **/*.html -p src/html -o dist -u -w",
+    "clean": "rimraf dist/*.html"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,8 @@
     "browser-sync": "^2.18.13",
     "eslint": "^4.11.0",
     "mkdir": "0.0.2",
+    "nunjucks-cli": "^0.5.1",
+    "rimraf": "^2.6.2",
     "rollup": "^0.51.5",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
