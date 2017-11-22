@@ -34,6 +34,7 @@
     "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.18.13",
     "eslint": "^4.11.0",
+    "kouto-swiss": "^1.1.0",
     "mkdir": "0.0.2",
     "nunjucks-cli": "^0.5.1",
     "rimraf": "^2.6.2",

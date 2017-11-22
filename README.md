@@ -12,9 +12,9 @@ Install the dependencies.
 
 ## Task scripts:
 
-- `npm start` - starts the server and listen to changes in the js/css files with livereload.
+- `npm start` - starts the server and listen to changes in the html/js/css files with livereload.
 - `npm run js` - compile the js.
 - `npm run js-lint` - runs  the lint tests in the js.
 - `npm run css` - compile the css.
 - `npm run css-lint` - runs  the lint tests in the css.
-- `npm run test` - compile the css.
+- `npm run html` - compile the html templates.
